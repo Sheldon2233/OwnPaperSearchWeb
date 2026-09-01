@@ -11,10 +11,16 @@
 - 日常更新教授或论文时，只需重新生成并提交 `data.json`；无需重新打包页面。
 - 页面会保留最近一次成功加载的数据；短暂网络失败不会清空当前内容。
 
-本地完整刷新命令：
+日常仅更新数据：
+
+```powershell
+npm run refresh:data -- -PagesRepoPath "..\OwnPaperSearchWeb"
+```
+
+界面代码发生变化时执行完整构建：
 
 ```powershell
 npm run refresh:site -- -PagesRepoPath "..\OwnPaperSearchWeb"
 ```
 
-该命令依次提取 Excel、合并教授与论文数据、校验三年时间范围和每位教授最多 20 篇规则、构建页面，并准备 GitHub Pages 根目录文件。
+两条命令都会提取 Excel、合并教授与论文数据，并校验三年时间范围及每位教授最多 20 篇规则。数据模式只生成 `data.json` 与论文 JSON 分片；完整模式还会重新构建页面静态资源。
