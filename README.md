@@ -18,4 +18,3 @@ npm run refresh:site -- -PagesRepoPath "..\OwnPaperSearchWeb"
 ```
 
 该命令依次提取 Excel、合并教授与论文数据、校验三年时间范围和每位教授最多 20 篇规则、构建页面，并准备 GitHub Pages 根目录文件。
-
